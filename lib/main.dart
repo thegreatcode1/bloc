@@ -2,6 +2,7 @@ import 'package:bloc_pratices/counter_bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(BlocProvider(
@@ -65,6 +66,7 @@ class MyHomePage extends StatelessWidget {
             ),
             BlocBuilder<CounterBloc, CounterState>(
               builder: (context, state) {
+                print("blocbuilder-->called");
                 return Text(
                   '${state.count}',
                   style: Theme.of(context).textTheme.headlineMedium,
