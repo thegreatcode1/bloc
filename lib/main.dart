@@ -75,33 +75,38 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: Row(
-        children: [
-          //increment button
-
-          FloatingActionButton(
-            onPressed: () {
-              //new methord ui refreshing
-              context.read<CounterBloc>().add(Increment());
-              //old methord ui refreshing
-              //BlocProvider.of<CounterBloc>(context).add(Increment());
-            },
-            tooltip: 'Increment',
-            child: const Icon(Icons.add),
-          ),
-
-          //decrement button
-          FloatingActionButton(
-            onPressed: () {
-              //new methord ui refreshing
-              context.read<CounterBloc>().add(Decrement());
-              //old methord ui refreshing
-              //BlocProvider.of<CounterBloc>(context).add(Increment());
-            },
-            tooltip: 'Decrement',
-            child: const Icon(Icons.add),
-          ),
-        ],
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            //increment button
+      
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: FloatingActionButton(
+                onPressed: () {
+                  //new methord ui refreshing
+                  context.read<CounterBloc>().add(Increment());
+                  //old methord ui refreshing
+                  //BlocProvider.of<CounterBloc>(context).add(Increment());
+                },
+                tooltip: 'Increment',
+                child: const Icon(Icons.add),
+              ),
+            ),
+      
+            //decrement button
+            FloatingActionButton(
+              onPressed: () {
+                //new methord ui refreshing
+                context.read<CounterBloc>().add(Decrement());
+                //old methord ui refreshing
+                //BlocProvider.of<CounterBloc>(context).add(Increment());
+              },
+              tooltip: 'Decrement',
+              child: const Icon(Icons.remove),
+            ),
+          ],
+        ),
+       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
