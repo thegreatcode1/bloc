@@ -74,15 +74,33 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //new methord ui refreshing
-          context.read<CounterBloc>().add(Increment());
-          //old methord ui refreshing
-          //BlocProvider.of<CounterBloc>(context).add(Increment());
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        children: [
+          //increment button
+
+          FloatingActionButton(
+            onPressed: () {
+              //new methord ui refreshing
+              context.read<CounterBloc>().add(Increment());
+              //old methord ui refreshing
+              //BlocProvider.of<CounterBloc>(context).add(Increment());
+            },
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+
+          //decrement button
+          FloatingActionButton(
+            onPressed: () {
+              //new methord ui refreshing
+              context.read<CounterBloc>().add(Decrement());
+              //old methord ui refreshing
+              //BlocProvider.of<CounterBloc>(context).add(Increment());
+            },
+            tooltip: 'Decrement',
+            child: const Icon(Icons.add),
+          ),
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
